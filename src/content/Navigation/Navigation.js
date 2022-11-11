@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <NavigationItem>Nav1</NavigationItem>
-      <NavigationItem>Nav2</NavigationItem>
-      <NavigationItem>Nav3</NavigationItem>
-      <NavigationItem>Nav4</NavigationItem>
+      <NavigationItem to="/">Home</NavigationItem>
+      <NavigationItem to="/bookmark">Bookmark</NavigationItem>
+      <NavigationItem to="/random">Random</NavigationItem>
     </NavigationContainer>
   );
 };
@@ -22,6 +22,6 @@ const NavigationContainer = styled.section`
   justify-content: space-around;
 `;
 
-const NavigationItem = styled.div``;
+const NavigationItem = styled(Link)``;
 
 export { Navigation };

@@ -1,20 +1,28 @@
 import "./App.css";
 import React from "react";
 import styled from "styled-components";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./content/Header/Header";
 import { Navigation } from "./content/Navigation/Navigation";
 import { Home } from "./content/Main/Home";
+import { Random } from "./content/Main/Random";
+import { Bookmark } from "./content/Main/Bookmark";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Main>
-        <Home />
-      </Main>
-      <Navigation />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/random" element={<Random />} />
+            <Route path="/bookmark" element={<Bookmark />} />
+          </Routes>
+        </Main>
+        <Navigation />
+      </div>
+    </Router>
   );
 }
 

@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
-const useGetData = () => {
-  const [res, setRes] = useState("");
+const useGetData = (url) => {
+  const [res, setRes] = useState([]);
 
   useEffect(() => {
+    async function fetchData() {
+      const response = await fetch(url);
+      const data = await response.json();
+      setRes(data.results);
+    }
     fetchData();
-  }, []);
-  async function fetchData() {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-    setRes(data.results);
-    console.log(res);
-  }
-  return { res };
+  }, [url]);
+
+  return [res, setRes];
 };
 
 export { useGetData };

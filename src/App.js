@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import styled from "styled-components";
-import { useEffect } from "react";
+
 import { Header } from "./content/Header/Header";
 import { Navigation } from "./content/Navigation/Navigation";
 import { Home } from "./content/Main/Home";
@@ -24,7 +24,7 @@ const Main = styled.section`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 80%;
 `;
 
 export default App;

@@ -7,15 +7,6 @@ import { Navigation } from "./content/Navigation/Navigation";
 import { Home } from "./content/Main/Home";
 
 function App() {
-  useEffect(() => {
-    fetchData();
-  }, []);
-  async function fetchData() {
-    const response = await fetch("https://rickandmortyapi.com/api/character");
-    const data = await response.json();
-    console.log(data.results);
-  }
-
   return (
     <div className="App">
       <Header />

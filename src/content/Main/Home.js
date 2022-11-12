@@ -6,7 +6,13 @@ const Home = () => {
     "https://rickandmortyapi.com/api/character"
   );
 
-  return <Card characters={characters} />;
+  return (
+    <>
+      {characters.map((character) => {
+        return <Card key={character.id} character={character} />;
+      })}
+    </>
+  );
 };
 
 export { Home };

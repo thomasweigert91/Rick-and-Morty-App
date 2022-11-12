@@ -1,10 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
 
-const Card = ({ characters }) => {
-  const [showInfo, setShowInfo] = useState(true);
-  console.log(characters);
-  return characters.map((character) => (
+const Card = ({ character }) => {
+  const [showInfo, setShowInfo] = useState(false);
+
+  return (
     <CardContainer>
       <CardName>{character.name}</CardName>
       <CardPicture src={character.image} />
@@ -23,7 +23,7 @@ const Card = ({ characters }) => {
         </CardInfoContainer>
       )}
     </CardContainer>
-  ));
+  );
 };
 
 const CardContainer = styled.div`

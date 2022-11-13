@@ -20,8 +20,21 @@ const NavigationContainer = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  background-color: ${(props) => props.theme.colorFirst};
+  border-top: 1px solid ${(props) => props.theme.colorSecond}; ;
 `;
 
-const NavigationItem = styled(Link)``;
+const NavigationItem = styled(Link)`
+  background-color: ${(props) => props.theme.colorLight};
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  transition: 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
 
 export { Navigation };

@@ -8,6 +8,7 @@ const useGetData = (url) => {
       const response = await fetch(url);
       const data = await response.json();
       setRes(data.results);
+      console.log(res);
     }
     fetchData();
   }, [url]);
